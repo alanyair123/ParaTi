@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #000;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    height: 100dvh;
+}
+
+#lienzo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 3s;
+}
+
+#lienzo.tenue {
+    opacity: 0.3;
+}
+
+#poema {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    max-width: 700px;
+    text-align: center;
+    color: #ffe0ee;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.4vw, 1.5rem);
+    line-height: 1.9;
+    text-shadow: 0 0 10px #ff4d94;
+    opacity: 0;
+    transition: opacity 1.5s;
+    white-space: pre-line;
+    pointer-events: none;
+}
+
+#poema.visible {
+    opacity: 1;
+}
+
+/* Teléfono en vertical: el poema va debajo del corazón */
+@media (max-aspect-ratio: 1/1) {
+    #poema {
+        top: 72%;
+        font-size: clamp(0.8rem, 3.7vw, 1.1rem);
+        line-height: 1.7;
+    }
+}
